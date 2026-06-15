@@ -11,7 +11,7 @@ import html2canvas from 'html2canvas';
   templateUrl: './certificado.html',
   styleUrl: './certificado.css',
 })
-export class Certificado implements OnInit {
+export class CertificadoComponent implements OnInit {
   id: string | null = null;
   certificado: Certificado | undefined;
 
