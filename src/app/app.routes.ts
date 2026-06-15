@@ -4,19 +4,18 @@ import { CertificadoForm } from './pages/certificado-form/certificado-form';
 import { CertificadoComponent } from './pages/certificado/certificado';
 
 export const routes: Routes = [
+  {
+    path: '',
+    component: Certificados,
+  },
 
   {
-    path: "",
-    component: Certificados
+    path: 'certificados/novo',
+    component: CertificadoForm,
   },
 
-   {
-    path: "certificados/novo",
-    component: CertificadoForm
+  {
+    path: 'certificados/:id',
+    component: CertificadoComponent,
   },
-
-   {
-    path: "certificados/:id",
-    component: CertificadoComponent
-  }
 ];
