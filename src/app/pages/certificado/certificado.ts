@@ -17,7 +17,10 @@ export class CertificadoComponent implements OnInit {
 
   @ViewChild('certificadoContainer') certificadoElement!: ElementRef;
 
-  constructor(private certificadoService: CertificadoService, private route: ActivatedRoute) {}
+  constructor(
+    private certificadoService: CertificadoService,
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -27,16 +30,14 @@ export class CertificadoComponent implements OnInit {
   }
 
   downloadCertificado() {
-    if(this.certificado == undefined) {
+    if (this.certificado == undefined) {
       return;
     }
-    html2canvas(this.certificadoElement.nativeElement, {scale: 2}).then(
-      canvas => {
-        const link = document.createElement('a');
-        link.href = canvas.toDataURL('image/png');
-        link.download = 'certificado_'+ this.certificado?.nome.replaceAll('', '_') +'.png';
-        link.click();
-      }
-    )
+    html2canvas(this.certificadoElement.nativeElement, { scale: 2 }).then((canvas) => {
+      const link = document.createElement('a');
+      link.href = canvas.toDataURL('image/png');
+      link.download = 'certificado_' + this.certificado?.nome.replaceAll('', '_') + '.png';
+      link.click();
+    });
   }
 }

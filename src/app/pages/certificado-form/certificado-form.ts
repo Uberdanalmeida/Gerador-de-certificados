@@ -15,7 +15,10 @@ import { Router } from '@angular/router';
   styleUrl: './certificado-form.css',
 })
 export class CertificadoForm {
-  constructor(private certificadoService: CertificadoService, private route: Router) {}
+  constructor(
+    private certificadoService: CertificadoService,
+    private route: Router,
+  ) {}
 
   @ViewChild('form') form!: NgForm;
 
